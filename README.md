@@ -1,2 +1,2 @@
-# c-workflows
+# cxx-workflows
 GitHub action C/C++ workflows
