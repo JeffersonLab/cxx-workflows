@@ -1,9 +1,11 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.16)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 file (READ ${CMAKE_SOURCE_DIR}/VERSION VERSION)
+
+string(STRIP ${VERSION} VERSION)
 
 message("PROJECT_VERSION = ${VERSION}")
 
