@@ -3,9 +3,11 @@ cmake_minimum_required(VERSION 3.10)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-project(Hello LANGUAGES CXX)
+file (READ ${CMAKE_SOURCE_DIR}/VERSION VERSION)
 
-file (STRINGS "VERSION" ${PROJECT_SOURCE_DIR}/VERSION)
+message("PROJECT_VERSION = ${VERSION}")
+
+project(Hello LANGUAGES CXX VERSION ${VERSION})
 
 set (SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set (INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
@@ -16,7 +18,6 @@ set(target_sources
 )
 list(TRANSFORM target_sources PREPEND "src/")
 
-include_directories("${SOURCE_DIR}")
 include_directories("${INCLUDE_DIR}")
 
 add_executable(Hello ${target_sources})
