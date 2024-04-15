@@ -14,12 +14,31 @@ project(Hello LANGUAGES CXX VERSION ${VERSION})
 set (SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set (INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-set(target_sources
-    hello.cpp
-    main.cpp
+set(LIB_HEADER_FILES
+    ${INCLUDE_DIR}/hello.h
 )
-list(TRANSFORM target_sources PREPEND "src/")
 
-include_directories("${INCLUDE_DIR}")
+set(LIB_SOURCE_FILES
+    ${SOURCE_DIR}/hello.cpp
+)
 
-add_executable(Hello ${target_sources})
+set(APP_SOURCE_FILES
+    ${SOURCE_DIR}/main.cpp
+)
+
+add_library(hello ${LIB_SOURCE_FILES})
+target_include_directories(hello PUBLIC "${INCLUDE_DIR}")
+
+add_executable(Hi ${APP_SOURCE_FILES})
+target_link_libraries(Hi PRIVATE hello)
+
+# Test Config
+enable_testing()
+
+add_executable(cpp_test tests/test.cpp)
+target_link_libraries(cpp_test PRIVATE hello)
+
+add_test(
+  NAME cpp_test
+  COMMAND $<TARGET_FILE:cpp_test>
+)
