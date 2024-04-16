@@ -1,4 +1,4 @@
-# cxx-workflows
+# cxx-workflows [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/JeffersonLab/cxx-workflows)
 GitHub action C/C++ workflows
 
 ## Reusable workflows
@@ -25,8 +25,6 @@ cmake -S. -Bbuild
 cmake --build build
 ctest --test-dir build -C Debug -V
 ```
-
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/JeffersonLab/cxx-workflows)
 
 ## Workflow Updates
 Workflows are versioned in semver just as with regular software, however, the GitHub Action workflows convention is to reference a major version number such that backwards compatible minor and patch updates are received automatically.  This means a separate major tag such as `v1` must be moved after each release.  To move a major tag after a release execute (`v1` shown):
