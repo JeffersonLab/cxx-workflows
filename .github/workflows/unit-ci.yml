@@ -19,6 +19,6 @@ jobs:
       - name: build
         run: cmake --build build
       - name: test
-        run: ctest --test-dir build -build-config Release -V
+        run: ctest --test-dir build -C Debug -V
 
 
