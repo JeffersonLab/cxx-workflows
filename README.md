@@ -18,7 +18,7 @@ This project uses it's own workflows in order to test them (the C++ App/Lib is j
 | [dd.yml](https://github.com/JeffersonLab/cxx-workflows/blob/main/.github/workflows/ci.yml) | Continuous Integration of an App/Lib |
 
 ## Demo App
-This project includes a `Hello World` C++ app to demonstrate the workflow.  Use the [.devcontainer](https://github.com/JeffersonLab/cxx-workflows/tree/main/.devcontainer) to build:
+This project includes a `Hello World` C++ app to demonstrate the workflow.  Use the [cxx-devcontainer](https://github.com/JeffersonLab/cxx-devcontainer) to build:
 
 ```
 cmake -S. -Bbuild
