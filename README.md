@@ -17,6 +17,8 @@ This project uses it's own workflows in order to test them (the C++ App/Lib is j
 | [ci.yml](https://github.com/JeffersonLab/cxx-workflows/blob/main/.github/workflows/ci.yml) | Continuous Integration of an App/Lib |
 | [cd.yml](https://github.com/JeffersonLab/cxx-workflows/blob/main/.github/workflows/cd.yml) | Continuous Deployment of an App/Lib with GitHub release |
 
+The `gh-pages-publish` workflow creates docs on GitHub Pages.  For example, the demo Lib docs are here: [Doxygen API docs](https://jeffersonlab.github.io/cxx-workflows/).  The workflow creates a new directory in the [gh-pages](https://github.com/JeffersonLab/cxx-workflows/tree/gh-pages) branch of your project for each release using the semver name and copies the auto generated API docs there.  An index HTML with JavaScript can then use the GitHub API to lookup the directories in the branch and list them in the index.  This means there is a one-time setup for each project where you need to commit and push the index.html, index.js, and .nojekyll files.  The path to the docs are then obtained at `https://jeffersonlab.github.io/project/` where project is your project name.  Example [setup commit](https://github.com/JeffersonLab/cxx-workflows/commit/36de0f35037c3b14834bbfbbb9e7784f2e70eebe).
+
 ## Demo App 
 This project includes a `Hello World` C++ app to demonstrate the workflow.  Use the [cxx-devcontainer](https://github.com/JeffersonLab/cxx-devcontainer) to build:
 
