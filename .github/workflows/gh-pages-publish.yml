@@ -10,6 +10,15 @@ on:
         required: false
         type: string
         default: 'build/html'
+  workflow_dispatch:
+    inputs:
+      semvertag:
+        required: true
+        type: string
+      folder:
+        required: false
+        type: string
+        default: 'build/html'
 
 permissions:
   contents: write
@@ -31,7 +40,7 @@ jobs:
       - name: test
         run: ctest --test-dir build -C Debug -V
       - name: Doc tasks
-        run: doxygen
+        uses: mattnotmitt/doxygen-action@v1
       - name: Deploy Docs
         uses: JamesIves/github-pages-deploy-action@v4
         with:
