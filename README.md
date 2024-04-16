@@ -6,5 +6,5 @@ GitHub action C/C++ workflows
 ```
 cmake -S. -Bbuild
 cmake --build build
-ctest --test-dir build
+ctest --test-dir build -C Debug -V
 ```
