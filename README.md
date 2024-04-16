@@ -17,7 +17,7 @@ This project uses it's own workflows in order to test them (the C++ App/Lib is j
 | [ci.yml](https://github.com/JeffersonLab/cxx-workflows/blob/main/.github/workflows/ci.yml) | Continuous Integration of an App/Lib |
 | [cd.yml](https://github.com/JeffersonLab/cxx-workflows/blob/main/.github/workflows/cd.yml) | Continuous Deployment of an App/Lib with GitHub release |
 
-## Demo App
+## Demo App 
 This project includes a `Hello World` C++ app to demonstrate the workflow.  Use the [cxx-devcontainer](https://github.com/JeffersonLab/cxx-devcontainer) to build:
 
 ```
@@ -25,6 +25,8 @@ cmake -S. -Bbuild
 cmake --build build
 ctest --test-dir build -C Debug -V
 ```
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/JeffersonLab/cxx-workflows)
 
 ## Workflow Updates
 Workflows are versioned in semver just as with regular software, however, the GitHub Action workflows convention is to reference a major version number such that backwards compatible minor and patch updates are received automatically.  This means a separate major tag such as `v1` must be moved after each release.  To move a major tag after a release execute (`v1` shown):
