@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - 'VERSION'
+    tags-ignore:
+      - "v*.*.*"
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    uses: jeffersonlab/cxx-workflows/.github/workflows/unit-ci.yml@v1
