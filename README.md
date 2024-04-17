@@ -1,4 +1,4 @@
-# cxx-workflows [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/JeffersonLab/cxx-workflows)
+# cxx-workflows [![CI](https://github.com/JeffersonLab/cxx-workflows/actions/workflows/ci.yml/badge.svg)](https://github.com/JeffersonLab/cxx-workflows/actions/workflows/ci.yml) <a href="https://codespaces.new/JeffersonLab/cxx-workflows"><img src="https://github.com/codespaces/badge.svg" height="20"></a>
 GitHub action C/C++ workflows
 
 ## Reusable workflows
