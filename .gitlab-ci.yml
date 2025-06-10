@@ -1,0 +1,8 @@
+include:
+  - component: $CI_SERVER_FQDN/accelerator/iac/release-workflow/workflow@v1
+  - component: $CI_SERVER_FQDN/accelerator/iac/release-workflow/pages-generate-cmake@v1
+  - component: $CI_SERVER_FQDN/accelerator/iac/release-workflow/pages-publish@v1
+
+stages:
+  - release
+  - publish
